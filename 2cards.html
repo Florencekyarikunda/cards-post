@@ -11,12 +11,20 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
 	<title>
 		Exercise
 	</title>
+
+	<style>
+		.border p-2 {
+			border-width: 20ch;
+		}
+	</style>
+
 </head>
 <style>
 	body {
@@ -129,21 +137,11 @@
 		border-width: 0;
 	}
 
-	html body form fieldset#custom div.select datalist div.option:hover,
-	html body form fieldset#custom div.select datalist div.option:focus,
-	html body form fieldset#custom div.select datalist div.option:checked {
-		background-color: rgb(194, 194, 209);
-		color: white;
-	}
 
 	html body form fieldset#custom div.select div.optgroup div.option[data-disabled] {
 		color: gray;
 	}
-/* 
-	html body form fieldset#custom div.select div.optgroup div.option[data-checked] {
-		background-color: blue;
-		color: white;
-	} */
+
 
 	html body form fieldset#custom div.select div.optgroup div.label {
 		font-weight: bold;
@@ -280,13 +278,6 @@
 				<div class="card">
 					<div class="card shadow-0 border" style="background-color: #f0f2f5;">
 						<div class="card-body p-4">
-							<div class="form-outline mb-4">
-								<img src="img/img4.PNG">
-								<input type="text" id="addANote" class="form-control" placeholder="Type comment..." />
-								<label class="form-label" for="addANote">
-								</label>
-							</div>
-
 							<div class="card mb-4">
 								<div class="card-body">
 									<p>Type your note, and hit enter to add it</p>
@@ -298,9 +289,10 @@
 											<p class="small mb-0 ms-2">Martha</p>
 										</div>
 										<div class="d-flex flex-row align-items-center">
-											<p class="small text-muted mb-0">Upvote?</p>
-											<i class="far fa-thumbs-up mx-2 fa-xs text-black"
-												style="margin-top: -0.16rem;"></i>
+											<!-- <p class="small text-muted mb-0">Upvote?</p> -->
+											<!-- <i class="far fa-thumbs-up mx-2 fa-xs text-black" -->
+											<!-- style="margin-top: -0.16rem;"></i> -->
+											<select name="Everyone" id="Everyone">Everyone</select>
 											<p class="small text-muted mb-0">3</p>
 										</div>
 									</div>
@@ -345,32 +337,52 @@
 									</div>
 								</div>
 							</div>
+							<div class="d-flex justify-content-between">
+								<div class="d-flex flex-row align-items-center">
+									<img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(31).webp"
+										alt="avatar" width="25" height="25" />
+								</div>
+								</div>
+								<section class="card">
+									<fieldset>
+										<fieldset style="box-sizing: 800%; width: 90%;padding-left: 30px;"
+											class="border p-2">
+											<legend style="color: green;" class="float-none w-auto p-2">Revised Default
+											</legend>
+											<p>Long before you sit dow to put digital pen to <br>paper you need to make
+												sure
+												you have to sit dow <br>to put pen to paper you need to make</p>
+										</fieldset>
+										<fieldset
+											style="border: red; width: 90%; padding-left: 30px; border-color: red;"
+											class="border p-2">
+											<legend style="color: red;" class="float-none w-auto p-2">Previous Default
+											</legend>
+											<p>Outlines keep you honest.They stop you from <br> indulging in poorly
+												thought-out metaphors about<br> driving and keep you focused on the
+												overall
+												structure.</p>
+										</fieldset>
 
-							<section>
-								<fieldset>
-									<legend>Revised Default</legend>
-									<p>Long before you sit dow to put digital pen to <br>paper you need to make sure
-										you have to sit dow <br>to put pen to paper you need to make</p>
-								</fieldset>
-								<fieldset>
-									<legend>Previous Default</legend>
-									<p>Outlines keep you honest.They stop you from <br> indulging in poorly
-										thought-out metaphors about<br> driving and keep you focused on the overall
-										structure.</p>
-								</fieldset>
-								<fieldset id="custom">
-									<legend>Revised Twitter</legend>
-									<p>Long before you sit dow to put digital pen to <br>paper you need to make sure
-										you have to sit dow <br>to put pen to paper you need to make</p>
+									</fieldset>
+									<fieldset style="width: 90%; padding-left: 30px;border: 1px solid #666;
+								border-radius: 8px;" class="border p-2">
+										<legend style="color: green ;" class="float-none w-auto p-2">Revised Twitter
+										</legend>
+										<p>Long before you sit dow to put digital pen to <br>paper you need to make sure
+											you have to sit dow <br>to put pen to paper you need to make</p>
 
-								</fieldset>
-								<fieldset id="custom">
-									<legend>Previous Twitter</legend>
-									<p>Outlines keep you honest.They stop you from <br> indulging in poorly
-										thought-out metaphors about<br> driving and keep you focused on the overall
-										structure.</p>
-								</fieldset>
-							</section>
+									</fieldset>
+									<fieldset style="border: red; width: 90%; padding-left: 30px;" class="border p-2">
+										<legend style="color: red;" class="float-none w-auto p-2">Previous Twitter
+										</legend>
+										<p>Outlines keep you honest.They stop you from <br> indulging in poorly
+											thought-out metaphors about<br> driving and keep you focused on the overall
+											structure.</p>
+									</fieldset>
+								</section>
+							</div>
+							</div>
 						</div>
 					</div>
 				</div>
