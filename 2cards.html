@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,
+		initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+	<title>
+		Place two bootstrap cards next to each other
+	</title>
+</head>
+<style>
+	body {
+		font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+	}
+
+	.select:focus {
+		border-color: blue;
+	}
+
+	html body form fieldset#custom div.select[data-multiple] div.header {
+		display: none;
+	}
+
+	html body form fieldset#custom div.select div.header {
+		content: "↓";
+		display: flex;
+		flex: 1;
+		align-items: center;
+		padding: 0;
+		position: relative;
+		width: auto;
+		box-sizing: border-box;
+		border-width: 1px;
+		border-style: inherit;
+		border-color: inherit;
+		border-radius: inherit;
+	}
+
+	html body form fieldset#custom div.select div.header::after {
+		content: "↓";
+		align-self: stretch;
+		display: flex;
+		align-content: center;
+		justify-content: center;
+		justify-items: center;
+		align-items: center;
+		padding: 0.5em;
+	}
+
+	html body form fieldset#custom div.select div.header:hover::after {
+		background-color: blue;
+	}
+
+	.select .header select {
+		appearance: none;
+		font-family: inherit;
+		font-size: inherit;
+		padding: 0;
+		border-width: 0;
+		width: 100%;
+		flex: 1;
+		display: none;
+	}
+
+	.select .header select optgroup {
+		display: none;
+	}
+
+	.select select div.option {
+		display: none;
+	}
+
+	html body form fieldset#custom div.select {
+		user-select: none;
+		box-sizing: border-box;
+		position: relative;
+		border-radius: 4px;
+		border-style: solid;
+		border-width: 0;
+		border-color: gray;
+		width: auto;
+		display: inline-block;
+	}
+
+	html body form fieldset#custom div.select:focus,
+	html body form fieldset#custom div.select:hover {
+		border-color: blue;
+	}
+
+	html body form fieldset#custom div.select[data-open] {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	html body form fieldset#custom div.select[data-open] datalist {
+		display: initial;
+	}
+
+	html body form fieldset#custom div.select datalist {
+		appearance: none;
+		position: absolute;
+		border-style: solid;
+		border-width: 1px;
+		border-color: gray;
+		left: 0;
+		display: none;
+		width: 100%;
+		box-sizing: border-box;
+		z-index: 2;
+		border-bottom-left-radius: 4px;
+		border-bottom-right-radius: 4px;
+	}
+
+	html body form fieldset#custom div.select datalist div.option {
+		background-color: white;
+		margin-bottom: 1px;
+		cursor: pointer;
+		padding: 0.5em;
+		border-width: 0;
+	}
+
+	html body form fieldset#custom div.select datalist div.option:hover,
+	html body form fieldset#custom div.select datalist div.option:focus,
+	html body form fieldset#custom div.select datalist div.option:checked {
+		background-color: rgb(194, 194, 209);
+		color: white;
+	}
+
+	html body form fieldset#custom div.select div.optgroup div.option[data-disabled] {
+		color: gray;
+	}
+/* 
+	html body form fieldset#custom div.select div.optgroup div.option[data-checked] {
+		background-color: blue;
+		color: white;
+	} */
+
+	html body form fieldset#custom div.select div.optgroup div.label {
+		font-weight: bold;
+	}
+
+	html body form fieldset#custom div.select div.optgroup div.option div.label {
+		font-weight: normal;
+		padding: 0.25em;
+	}
+
+	/* html body form fieldset#custom div.select div.header span {
+		flex: 1;
+		padding: 0.5em;
+	} */
+
+	.fa {
+		padding: 20px;
+		font-size: 30px;
+		width: 40px;
+		text-align: center;
+		text-decoration: none;
+	}
+
+	.fa:hover {
+		opacity: 0.7;
+	}
+
+
+	/* Facebook */
+	.fa-facebook-f {
+		background: #3B5998;
+		color: white;
+	}
+
+	/* Twitter */
+	.fa-twitter {
+		background: #0d78ca;
+		color: white;
+
+	}
+
+	a {
+		text-decoration: none;
+		display: inline-block;
+		padding: 8px 16px;
+	}
+
+	a:hover {
+		background-color: #ddd;
+		color: black;
+	}
+
+
+	.round {
+		border-radius: 50%;
+	}
+
+	html body form fieldset#custom div.select div.header {
+		content: "↓";
+		display: flex;
+		flex: 1;
+		align-items: center;
+		padding: 0;
+		position: relative;
+		width: auto;
+		box-sizing: border-box;
+		border-width: 6px;
+		border-style: inherit;
+		border-color: inherit;
+		border-radius: inherit;
+	}
+</style>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 mb-4">
+				<a href="#" class="previous round">&#8249;</a>
+				<!-- Facebook -->
+				<i class="fab fa-facebook-f"></i>
+				<!-- Instagram -->
+				<i class="fab fa-instagram"></i>
+
+				<!-- Github -->
+				<i class="fab fa-github"></i>
+				<!-- Twitter -->
+				<i class="fab fa-twitter"></i>
+				<a href="#" class="next round">&#8250;</a>
+				<div class="card">
+					<img class="card-img-top" src="img/exercise (3).png" alt="">
+
+					<div class="card-body">
+						<!-- <h5 class="card-title">Card title</h5> -->
+						<p class="card-text">
+							Vivamus magna justo,lacinia eget consecter sed,
+							convallis at tellus, Cras ultrices ligula sed magna
+							dictum porta. Nulla quis lorem ut libero malesuada
+							feugiat em uteria..<a href="#">see more</a>
+						</p>
+					</div>
+				</div>
+				<div>
+				</div>
+				<br>
+				<h6>Select a client</h6>
+				<select class="form-control">
+					<option aria-placeholder="Batesa Enterprises Limited">Batesa Enterprises Limited</option>
+					<option value="Batesa Enterprises Limited">Batesa Enterprises Limited</option>
+				</select><br>
+				<h6>Content Type</h6>
+				<select class="form-control">
+					<option aria-placeholder="Batesa Enterprises Limited">Social media</option>
+					<option value="Batesa Enterprises Limited"></option>
+				</select><br>
+				<!-- <h6 class="fw-bold mb-1">Selected Social</h6> -->
+				<div class="d-flex align-items-center mb-3">
+					<p class="mb-0">
+						Selected Social
+					</p>
+					<a href="#"><i class="fas fa-pencil-alt ms-2"></i></a>
+				</div>
+				<img src="img/img2.PNG" />
+				<h6 class="fw-bold mb-1">Scheduled for</h6>
+				<div class="d-flex align-items-center mb-3">
+					<p class="mb-0">
+						23 June, 2022- 9:30AM
+					</p>
+					<a href="#"><i class="fas fa-pencil-alt ms-2"></i></a>
+				</div>
+				<br>
+				<hr>
+				<p>Compaign: <a href="#">This is our Moment</a></p>
+			</div>
+			<div class="col-lg-6 mb-4">
+				<div class="card">
+					<div class="card shadow-0 border" style="background-color: #f0f2f5;">
+						<div class="card-body p-4">
+							<div class="form-outline mb-4">
+								<input type="text" id="addANote" class="form-control" placeholder="Type comment..." />
+								<label class="form-label" for="addANote">+ Add a Comment</label>
+							</div>
+
+							<div class="card mb-4">
+								<div class="card-body">
+									<p>Type your note, and hit enter to add it</p>
+
+									<div class="d-flex justify-content-between">
+										<div class="d-flex flex-row align-items-center">
+											<img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(4).webp"
+												alt="avatar" width="25" height="25" />
+											<p class="small mb-0 ms-2">Martha</p>
+										</div>
+										<div class="d-flex flex-row align-items-center">
+											<p class="small text-muted mb-0">Upvote?</p>
+											<i class="far fa-thumbs-up mx-2 fa-xs text-black"
+												style="margin-top: -0.16rem;"></i>
+											<p class="small text-muted mb-0">3</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="card mb-4">
+								<div class="card-body">
+									<p>Type your note, and hit enter to add it</p>
+
+									<div class="d-flex justify-content-between">
+										<div class="d-flex flex-row align-items-center">
+											<img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp"
+												alt="avatar" width="25" height="25" />
+											<p class="small mb-0 ms-2">Johny</p>
+										</div>
+										<div class="d-flex flex-row align-items-center">
+											<p class="small text-muted mb-0">Upvote?</p>
+											<i class="far fa-thumbs-up mx-2 fa-xs text-black"
+												style="margin-top: -0.16rem;"></i>
+											<p class="small text-muted mb-0">4</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="card mb-4">
+								<div class="card-body">
+									<p>Type your note, and hit enter to add it</p>
+
+									<div class="d-flex justify-content-between">
+										<div class="d-flex flex-row align-items-center">
+											<img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(31).webp"
+												alt="avatar" width="25" height="25" />
+											<p class="small mb-0 ms-2">Mary Kate</p>
+										</div>
+										<div class="d-flex flex-row align-items-center text-primary">
+											<p class="small mb-0">Upvoted</p>
+											<i class="fas fa-thumbs-up mx-2 fa-xs" style="margin-top: -0.16rem;"></i>
+											<p class="small mb-0">2</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<section>
+								<fieldset>
+									<legend>Revised Default</legend>
+									<p>Long before you sit dow to put digital pen to <br>paper you need to make sure
+										you have to sit dow <br>to put pen to paper you need to make</p>
+								</fieldset>
+								<fieldset>
+									<legend>Previous Default</legend>
+									<p>Outlines keep you honest.They stop you from <br> indulging in poorly
+										thought-out metaphors about<br> driving and keep you focused on the overall
+										structure.</p>
+								</fieldset>
+								<fieldset id="custom">
+									<legend>Revised Twitter</legend>
+									<p>Long before you sit dow to put digital pen to <br>paper you need to make sure
+										you have to sit dow <br>to put pen to paper you need to make</p>
+
+								</fieldset>
+								<fieldset id="custom">
+									<legend>Previous Twitter</legend>
+									<p>Outlines keep you honest.They stop you from <br> indulging in poorly
+										thought-out metaphors about<br> driving and keep you focused on the overall
+										structure.</p>
+								</fieldset>
+							</section>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+		</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+		</script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+		</script>
+
+	<script>
+		const selects = custom.querySelectorAll('select');
+		for (const select of selects) {
+			const div = document.createElement('div');
+			const header = document.createElement('div');
+			const datalist = document.createElement('datalist');
+			const optgroups = select.querySelectorAll('optgroup');
+			const span = document.createElement('span');
+			const options = select.options;
+			const parent = select.parentElement;
+			const multiple = select.hasAttribute('multiple');
+			function onclick(e) {
+				const disabled = this.hasAttribute('data-disabled');
+				select.value = this.dataset.value;
+				span.innerText = this.dataset.label;
+				if (disabled) return;
+				if (multiple) {
+					if (e.shiftKey) {
+						const checked = this.hasAttribute("data-checked");
+						if (checked) {
+							this.removeAttribute("data-checked");
+						} else {
+							this.setAttribute("data-checked", "");
+						}
+					} else {
+						const options = div.querySelectorAll('.option');
+						for (let i = 0; i < options.length; i++) {
+							const option = options[i];
+							option.removeAttribute("data-checked");
+						}
+						this.setAttribute("data-checked", "");
+					}
+				}
+			}
+
+			function onkeyup(e) {
+				e.preventDefault();
+				e.stopPropagation();
+				if (e.keyCode === 13) {
+					this.click();
+				}
+			}
+
+			div.classList.add('select');
+			header.classList.add('header');
+			div.tabIndex = 1;
+			select.tabIndex = -1;
+			span.innerText = select.label;
+			header.appendChild(span);
+
+			for (const attribute of select.attributes) {
+				div.dataset[attribute.name] = attribute.value;
+			}
+			for (let i = 0; i < options.length; i++) {
+				const option = document.createElement('div');
+				const label = document.createElement('div');
+				const o = options[i];
+				for (const attribute of o.attributes) {
+					option.dataset[attribute.name] = attribute.value;
+				}
+				option.classList.add('option');
+				label.classList.add('label');
+				label.innerText = o.label;
+				option.dataset.value = o.value;
+				option.dataset.label = o.label;
+				option.onclick = onclick;
+				option.onkeyup = onkeyup;
+				option.tabIndex = i + 1;
+				option.appendChild(label);
+				datalist.appendChild(option);
+			}
+			div.appendChild(header);
+			for (const o of optgroups) {
+				const optgroup = document.createElement('div');
+				const label = document.createElement('div');
+				const options = o.querySelectorAll('option');
+
+				Object.assign(optgroup, o);
+				optgroup.classList.add('optgroup');
+				label.classList.add('label');
+				label.innerText = o.label;
+				optgroup.appendChild(label);
+				div.appendChild(optgroup);
+				for (const o of options) {
+					const option = document.createElement('div');
+					const label = document.createElement('div');
+
+					for (const attribute of o.attributes) {
+						option.dataset[attribute.name] = attribute.value;
+					}
+					option.classList.add('option');
+					label.classList.add('label');
+					label.innerText = o.label;
+					option.tabIndex = i + 1;
+					option.dataset.value = o.value;
+					option.dataset.label = o.label;
+					option.onclick = onclick;
+					option.onkeyup = onkeyup;
+					option.tabIndex = i + 1;
+					option.appendChild(label);
+					optgroup.appendChild(option);
+				}
+			}
+
+			div.onclick = (e) => {
+				e.preventDefault();
+			};
+
+			parent.insertBefore(div, select);
+			header.appendChild(select);
+			div.appendChild(datalist);
+			datalist.style.top = `${header.offsetTop + header.offsetHeight}px`;
+
+			div.onclick = (e) => {
+				if (!multiple) {
+					const open = this.hasAttribute("data-open");
+					e.stopPropagation();
+					if (open) {
+						div.removeAttribute("data-open");
+					} else {
+						div.setAttribute("data-open", "");
+					}
+				}
+			};
+
+			div.onkeyup = (event) => {
+				event.preventDefault();
+				if (event.keyCode === 13) {
+					div.click();
+				}
+			};
+
+			document.addEventListener('click', (e) => {
+				if (div.hasAttribute("data-open")) {
+					div.removeAttribute("data-open");
+				}
+			});
+
+			const width = Math.max(...Array.from(options).map((e) => {
+				span.innerText = e.label;
+				return div.offsetWidth;
+			}));
+
+			console.log(width);
+			div.style.width = `${width}px`;
+		}
+		document.forms[0].onsubmit = (e) => {
+			const data = new FormData(this);
+			e.preventDefault();
+			submit.innerText = JSON.stringify([...data.entries()]);
+		};
+	</script>
+</body>
+
+</html>
